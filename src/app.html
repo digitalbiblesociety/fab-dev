@@ -8,14 +8,14 @@
 			if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
 				document.documentElement.classList.add("dark")
 			}
-			var lang = navigator.language || navigator.userLanguage;
-			document.documentElement.lang = lang.split("-")[0];
+			var lang = navigator.language || navigator.userLanguage
+			document.documentElement.lang = lang.split("-")[0]
 		</script>
 	</head>
 	<body>
 		<div
 			id="svelte"
-			class="bg-white relative overflow-x-hidden text-gray-900 dark:bg-gray-900 dark:text-gray-50">
+			class="relative overflow-x-hidden bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-50">
 			%svelte.body%
 		</div>
 	</body>

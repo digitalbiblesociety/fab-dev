@@ -12,7 +12,7 @@ function localizedPath(path, lastLocale, newLocale) {
 		(base ? "/" + base : "") +
 		"/" +
 		newLocale +
-		path.substring(lastLocale.length + 1)
+		(path.includes(lastLocale) ? path.substring(lastLocale.length + 1) : path)
 	)
 }
 
@@ -20,11 +20,11 @@ let unsubscribe = () => {}
 // Run inside onMount to be only run client-side
 onMount(() => {
 	unsubscribe = locale.subscribe((newLocale) => {
-		const UnlocalizedEndPoints = new Set(["sitemap.xml", "robots.txt"]);
+		const UnlocalizedEndPoints = new Set(["sitemap.xml", "robots.txt"])
 
 		console.log(UnlocalizedEndPoints.has($page.url.pathname))
 
-		if(!UnlocalizedEndPoints.has($page.url.pathname)) {
+		if (!UnlocalizedEndPoints.has($page.url.pathname)) {
 			goto(localizedPath($page.url.pathname, lastLocale, newLocale), {
 				replaceState: true,
 			})

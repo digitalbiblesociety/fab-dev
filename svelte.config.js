@@ -16,7 +16,7 @@ const config = {
 					"svelte-stripe-js",
 					"tweened-staggered.js",
 					"WorldMap",
-					"bibly"
+					"bibly",
 				],
 			},
 		},

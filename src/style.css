@@ -12,28 +12,28 @@
 
 @media print {
 	@page {
-	   margin-left: 0.5in;
-	   margin-right: 0.5in;
-	   margin-top: 0;
-	   margin-bottom: 0;
-	 }
+		margin-left: 0.5in;
+		margin-right: 0.5in;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 
-	 #page-footer,
-	 #page-header {
-		 display:none;
-	 }
+	#page-footer,
+	#page-header {
+		display: none;
+	}
 }
 
 .datatable tbody td {
-	@apply px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300;
+	@apply whitespace-nowrap px-6 py-4 text-sm text-gray-900 dark:text-gray-300;
 }
 
 .datatable thead {
-	@apply bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-400 h-12;
+	@apply h-12 bg-gray-50 text-gray-600 dark:bg-gray-700 dark:text-gray-400;
 }
 
 .datatable table thead th {
-	@apply relative px-6 py-3 text-xs dark:bg-gray-900 text-gray-500 dark:text-gray-100 uppercase tracking-wider cursor-pointer;
+	@apply relative cursor-pointer px-6 py-3 text-xs uppercase tracking-wider text-gray-500 dark:bg-gray-900 dark:text-gray-100;
 }
 
 .datatable .even {
@@ -41,11 +41,11 @@
 }
 
 .datatable thead th.desc:before {
-	content: '▲';
+	content: "▲";
 }
 
 .datatable thead th.asc:before {
-	content: '▼';
+	content: "▼";
 }
 
 /* Wiki Sidebar */
@@ -54,7 +54,7 @@
 	@apply sm:divide-y sm:divide-gray-200;
 }
 .infobox tbody tr {
-	@apply py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6;
+	@apply py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6;
 }
 
 .infobox tbody tr th {
@@ -62,20 +62,20 @@
 }
 
 .infobox .infobox-header {
-	@apply text-lg text-gray-900 font-semibold;
+	@apply text-lg font-semibold text-gray-900;
 }
 
 .infobox tbody tr td {
-	@apply mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2;
+	@apply mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0;
 }
 
 .mw-collapsible-content li {
 	@apply inline-block;
 }
 .mw-collapsible-content li:after {
-	content: ', ';
+	content: ", ";
 }
 
 .mw-collapsible-content li:last-child:after {
-	content: '';
+	content: "";
 }

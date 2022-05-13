@@ -1,6 +1,5 @@
 <script>
 import { browser } from "$app/env"
-import Icon from "sverocons/Icon.svelte"
 import QrCode from "qrcode-svg"
 import WorldMap from "../../components/Map/WorldMap.svelte"
 
@@ -29,8 +28,7 @@ function printSection(section) {
 }
 </script>
 
-<div
-	class="xl:rounded-xl bg-gradient-to-r from-gray-600 to-black">
+<div class="bg-gradient-to-r from-gray-600 to-black xl:rounded-xl">
 	<WorldMap />
 </div>
 
@@ -65,7 +63,19 @@ function printSection(section) {
 						<dt>
 							<div
 								class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white">
-								<Icon name="globe-alt" class="h-6 w-6" />
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									class="h-6 w-6"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+									stroke-width="2">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
+									</path>
+								</svg>
 							</div>
 							<!--<p class="ml-16 text-lg leading-6 font-medium text-gray-900">Competitive exchange rates</p>-->
 						</dt>
@@ -79,7 +89,19 @@ function printSection(section) {
 						<dt>
 							<div
 								class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white">
-								<Icon name="scale" class="h-6 w-6" />
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									class="h-6 w-6"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+									stroke-width="2">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+									</path>
+								</svg>
 							</div>
 							<!--<p class="ml-16 text-lg leading-6 font-medium text-gray-900">No hidden fees</p>-->
 						</dt>
@@ -93,7 +115,19 @@ function printSection(section) {
 						<dt>
 							<div
 								class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white">
-								<Icon name="lightning-bolt" class="h-6 w-6" />
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									class="h-6 w-6"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+									stroke-width="2">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+									</path>
+								</svg>
 							</div>
 							<!--<p class="ml-16 text-lg leading-6 font-medium text-gray-900">Transfers are instant</p>-->
 						</dt>

@@ -1,12 +1,16 @@
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors")
 
 module.exports = {
-	content: ["src/app.html", "src/**/*.{svelte,css}","node_modules/**/*.svelte"],
+	content: [
+		"src/app.html",
+		"src/**/*.{svelte,css}",
+		"node_modules/**/*.svelte",
+	],
 	darkMode: "class", // or 'media' or false
 	theme: {
 		colors: {
-			transparent: 'transparent',
-			current: 'currentColor',
+			transparent: "transparent",
+			current: "currentColor",
 			primary: colors.emerald,
 			secondary: colors.green,
 			black: colors.black,

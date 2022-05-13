@@ -1,13 +1,14 @@
 <script context="module">
-	import FallbackFetch from "$lib/fallback-fetch.js";
-	export async function load({ fetch }) {
-		return FallbackFetch(fetch, 'fobai')
-	}
+import FallbackFetch from "$lib/fallback-fetch.js"
+export async function load({ fetch }) {
+	return FallbackFetch(fetch, "fobai")
+}
 </script>
+
 <script>
-	import WorldMap from "../../../components/Map/WorldMap.svelte";
+import WorldMap from "../../../components/Map/WorldMap.svelte"
 
-	export let fobai
+export let fobai
 </script>
 
-<WorldMap pins={fobai} />
+<WorldMap pins="{fobai}" />
