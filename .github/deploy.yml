@@ -15,6 +15,7 @@ jobs:
 
       - name: Install and Build
         run: |
+          touch .nojekyll
           npm install
           npm run build
 
