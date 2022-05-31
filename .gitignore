@@ -5,7 +5,6 @@ node_modules
 /package
 /build
 /functions
-/static/data
 .env
 
 # Language Maps to be moved to an external host?
