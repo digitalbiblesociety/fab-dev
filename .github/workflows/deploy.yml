@@ -18,10 +18,8 @@ jobs:
           npm install
           npm run build
 
-      - name: GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3.0.0
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
-          build_dir: build
-          fqdn: 'find.bible'
-          jekyll: false
-          verbose: true
+          branch: gh-pages
+          folder: build
