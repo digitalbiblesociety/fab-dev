@@ -4,18 +4,18 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Install and Build
         run: |
-          touch .nojekyll
           npm install
           npm run build
 
@@ -24,3 +24,7 @@ jobs:
         with:
           branch: gh-pages
           folder: public
+          clean: true
+          clean-exclude: |
+            .nojekyll
+            CNAME
