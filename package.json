@@ -1,14 +1,14 @@
 {
 	"name": "fab",
+	"description": "The find a bible site built with Sveltekit and TailwindCSS",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "concurrently -n kit,i18n \"pnpm run watch:translations\" \"pnpm run dev:kit\"",
 		"dev:kit": "svelte-kit dev",
-		"build": "pnpm run build:translations && svelte-kit build",
+		"build": "pnpm run build:translations && svelte-kit build && touch build/.nojekyll  && echo \"find.bible\" >| build/CNAME",
 		"rebuild": "pnpm run clean && pnpm run build",
 		"clean": "rm -rf .svelte-kit && rm -rf build && rm src/generated/translations.js",
-		"publish": "pnpm run rebuild && cd ./build && echo \"dbs.org\" >| CNAME && git init && git add . && git commit -m \"auto-push\" && git branch -M main && git remote add origin git@github.com:digitalbiblesociety/fab-prod.git && git push -f -u origin main",
-		"publish-dev": "pnpm run rebuild && cd ./build && echo \"dev.dbs.org\" >| CNAME && git init && git add . && git commit -m \"auto-push\" && git branch -M main && git remote add origin git@github.com:digitalbiblesociety/fab-dev.git && git push -f -u origin main",
+		"deploy": "pnpm run rebuild && npx gh-pages -d .svelte-kit/build -t true",
 		"preview": "svelte-kit preview",
 		"test": "playwright test",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
@@ -21,6 +21,7 @@
 		"@beyonk/svelte-google-analytics": "^2.2.0",
 		"@messageformat/cli": "^3.0.1",
 		"@messageformat/core": "^3.0.0",
+		"@playwright/test": "^1.21.0",
 		"@stripe/stripe-js": "^1.19.1",
 		"@sveltejs/adapter-node": "next",
 		"@sveltejs/adapter-static": "next",
@@ -31,7 +32,6 @@
 		"@tailwindcss/typography": "^0.5.0",
 		"@typescript-eslint/eslint-plugin": "^4.19.0",
 		"@typescript-eslint/parser": "^4.19.0",
-		"@playwright/test": "^1.21.0",
 		"autoprefixer": "^10.4.0",
 		"concurrently": "^6.2.1",
 		"gh-pages": "^3.2.3",
@@ -71,14 +71,14 @@
 		"mysql": "^2.18.1",
 		"qrcode-svg": "^1.1.0",
 		"query-store": "^1.1.2",
+		"svelte-bible-wiki": "github:digitalbiblesociety/svelte-bible-wiki",
 		"svelte-forms": "^2.0.7",
 		"svelte-heatmap": "^1.0.2",
 		"svelte-i18n": "^3.3.10",
 		"svelte-select": "^4.4.7",
 		"svelte-tiny-linked-charts": "^1.0.6",
-		"topojson": "^3.0.2",
-		"svelte-bible-wiki": "file:../svelte-packages/svelte-bible-wiki",
-		"svelte-simple-datatables": "file:../svelte-packages/svelte-simple-datatables",
-		"sverocons": "^0.0.2"
+		"sveltekit-datatables": "github:digitalbiblesociety/sveltekit-datatables",
+		"sverocons": "^0.0.2",
+		"topojson": "^3.0.2"
 	}
 }
